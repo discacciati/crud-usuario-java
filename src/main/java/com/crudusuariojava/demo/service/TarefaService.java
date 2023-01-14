@@ -31,9 +31,9 @@ public class TarefaService {
         return tarefaRepository.findById(id).orElse(null);
     }
 
- /*   public Tarefa buscarPorUsuarioResponsavel(Long id){
-        return tarefaRepository.findByUsuarioResponsavel(id).orElse(null);
-    }*/
+    public List<Tarefa> buscarPorUsuarioResponsavel(String filtro) {
+        return (List<Tarefa>) tarefaRepository.findByUsuarioResponsavel(filtro);
+    }
 
     public Tarefa atualizar(Tarefa tarefa, Long id){
         Tarefa tarefaFound = tarefaRepository.findById(id).orElse(null);

@@ -1,6 +1,7 @@
 package com.crudusuariojava.demo.controller;
 
 import com.crudusuariojava.demo.model.Tarefa;
+import com.crudusuariojava.demo.model.Usuario;
 import com.crudusuariojava.demo.service.TarefaService;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +25,11 @@ public class TarefaController {
     @GetMapping
     public List<Tarefa> listar(){
         return tarefaService.listar();
+    }
+
+    @GetMapping("/{usuarioResponsavel}")
+    public List<Tarefa> buscarPorUsuarioResponsavel(@RequestParam String nome) {
+        return tarefaService.buscarPorUsuarioResponsavel(nome);
     }
 
     @GetMapping("/{id}")
