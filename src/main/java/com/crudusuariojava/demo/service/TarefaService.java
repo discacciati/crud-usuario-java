@@ -23,6 +23,18 @@ public class TarefaService {
         return tarefaRepository.save(tarefa);
     }
 
+    public List<Tarefa> listar(){
+        return (List<Tarefa>) tarefaRepository.findAll();
+    }
+
+    public Tarefa buscarPorId(Long id){
+        return tarefaRepository.findById(id).orElse(null);
+    }
+
+ /*   public Tarefa buscarPorUsuarioResponsavel(Long id){
+        return tarefaRepository.findByUsuarioResponsavel(id).orElse(null);
+    }*/
+
     public Tarefa atualizar(Tarefa tarefa, Long id){
         Tarefa tarefaFound = tarefaRepository.findById(id).orElse(null);
 

@@ -39,6 +39,7 @@ public class UsuarioService {
         usuarioFound.setDataNascimento(usuario.getDataNascimento());
         usuarioFound.setGenero(usuario.getGenero());
         usuarioFound.setNumeroTelefone(usuario.getNumeroTelefone());
+        usuarioFound.setEndereco(usuario.getEndereco());
 
         usuarioRepository.save(usuarioFound);
 
