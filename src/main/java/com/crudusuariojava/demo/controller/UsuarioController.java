@@ -25,6 +25,11 @@ public class UsuarioController {
         return usuarioService.listar();
     }
 
+    @GetMapping()
+    public List<Usuario> buscarPorNome(@RequestParam String nome) {
+        return usuarioService.encontrarPorNome(nome);
+    }
+
     @GetMapping("/{id}")
     public Usuario buscarPorId(@PathVariable Long id){
         return usuarioService.buscarPorId(id);

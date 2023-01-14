@@ -28,6 +28,10 @@ public class UsuarioService {
         return usuarioRepository.findById(id).orElse(null);
     }
 
+    public List<Usuario> encontrarPorNome(String filtro) {
+        return (List<Usuario>) usuarioRepository.findByNome(filtro);
+    }
+
 
     public Usuario atualizar(Usuario usuario, Long id){
         Usuario usuarioFound = usuarioRepository.findById(id).orElse(null);
